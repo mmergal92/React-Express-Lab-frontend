@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+// import { Button } from 'react-bulma-components';
+// import "bulma/sass/utilities/_all.sass";
+// import "bulma/sass/elements/button.sass";
 
 function Projects(props) {
   // create state to hold projects
@@ -20,14 +23,18 @@ function Projects(props) {
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {
     return projects.map((project) => (
-      <div>
+      <div className="contents">
         <h1>{project.name}</h1>
-        <img src={project.image} />
+        <img src={project.image} class="projImage"/><br/>
         <a href={project.git}>
+          {/* <button class="button is-primary">Github</button> */}
           <button>Github</button>
+
         </a>
         <a href={project.live}>
-          <button>live site</button>
+          {/* <button class="button is-large">live site</button> */}
+          <button>Live Site</button>
+
         </a>
       </div>
     ));
